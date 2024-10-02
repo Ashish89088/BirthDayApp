@@ -6,6 +6,9 @@ const container = document.getElementsByClassName('container')[0];
 let greet = 'GREETING\'S FROM KOLKATA';
 
 const bday = 'HAPPY BIRTHDAY MAMA';
+const bdaymsg = 'May this year brings you endless love, happiness,and the fulfillment of all yours dreams';
+const audioPath = './resources/happy-birthday-to-you-bossa-nova-style-arrangement-21399.mp3';
+
 
 function myFunc(p1 , widthStyle) {
     txt.innerHTML = p1;
@@ -23,6 +26,14 @@ function myFunc(p1 , widthStyle) {
         clickMeBtn.disabled = true;
         clickMeBtn.onclick = function() {
             txt.innerHTML = bday; 
+            audio = new Audio(audioPath); 
+            audio.preload = 'auto';
+            audio.play();
+            setInterval(() => {
+                audio.play();
+            }, 15000);
+            
+            setTimeout(msgModalfun, 2000);
           };
         //button code end
 
@@ -51,4 +62,11 @@ async function loop(){
     }
 }
 
-setTimeout(myFunc, 8000, greet , 'inc width');
+setTimeout(myFunc, 7000, greet , 'inc width');
+
+function msgModalfun() {
+    const modalmsg = document.createElement('div');
+    modalmsg.classList.add('modalMsg');
+    modalmsg.innerHTML = bdaymsg;
+    container.appendChild(modalmsg);
+}
