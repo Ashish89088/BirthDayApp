@@ -4,20 +4,53 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: rgb(9, 48, 9);
-    /* background-color: rgb(14, 14, 14);  */
+    /* animation: containerColor 8s infinite; */
 }
 
 .text {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     color: white;
     background-color: rgb(14, 14, 14);
     border-radius: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: 100px;
+    text-shadow: 2px 2px 80px #FF0000;
 }
 
+.hint {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 25px;
+}
+.hint:hover .tooltip{
+    font-size: 15px;
+    visibility: visible;
+}
+.tooltip {
+    color: yellow;
+    visibility: hidden;   
+}
 
+.clickMeBtn {
+    margin: 50px;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(14, 14, 14);
+    color: #fff;
+    border: 2px dashed #dce6e1;
+}
+
+@keyframes containerColor {
+    0%   {background-color: rgb(191, 74, 74);}
+    25%  {background-color: rgb(174, 174, 36);}
+    50%  {background-color: rgb(61, 61, 220);}
+    100% {background-color: rgb(49, 89, 49);}
+  }
